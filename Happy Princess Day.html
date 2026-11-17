@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Princess Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12061f;--bg2:#2d0f50;--pink:#ff8fc7;--gold:#ffd86b;--text:#fff3fa;--card:rgba(255,255,255,.07);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:radial-gradient(ellipse at 50% 0%,#4a1a7a 0%,var(--bg2) 35%,var(--bg) 100%) fixed;color:var(--text);font-family:'Poppins',sans-serif;overflow-x:hidden}
+body.lock{overflow:hidden;height:100%}
+#bg,#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#bg{z-index:0}#fx{z-index:20}
+section{position:fixed;inset:0;z-index:1;display:none;padding:70px 20px 80px;flex-direction:column;align-items:center;justify-content:safe center;text-align:center;overflow-y:auto}#hero{overflow:hidden}.next{margin-top:30px}.opt{display:block;width:100%;max-width:420px;margin:10px auto;font-family:'Poppins',sans-serif;font-weight:400;font-size:1rem;padding:13px 18px;border-radius:16px;animation:none;background:rgba(255,255,255,.1);box-shadow:none;border:1.5px solid rgba(255,216,107,.5)}.opt.ok{background:linear-gradient(135deg,#3ecf8e,#1f9d6b);border-color:#fff}.opt.bad{background:#8a1f4a;animation:shake .4s}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}#dots{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:0;right:0;z-index:30;display:flex;justify-content:center;gap:8px}#dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3)}#dots i.on{background:var(--gold);box-shadow:0 0 10px var(--gold)}.qh{font-size:.85rem;opacity:.75;margin-bottom:10px}.qq{font-family:'Cinzel',serif;font-size:1.25rem;margin-bottom:16px;line-height:1.5}
+h1,h2{font-family:'Cinzel',serif;background:linear-gradient(90deg,var(--gold),#fff,var(--pink),var(--gold));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;filter:drop-shadow(0 0 14px rgba(255,143,199,.45))}
+@keyframes shine{to{background-position:250% 0}}
+h1{font-size:clamp(2.1rem,9vw,5rem);line-height:1.1;margin-top:34vh}
+h2{font-size:clamp(1.5rem,5.5vw,2.6rem);margin-bottom:30px}
+.script{font-family:'Great Vibes',cursive;font-size:clamp(1.8rem,6vw,3rem);color:var(--pink);margin:12px 0 26px;text-shadow:0 0 18px rgba(255,143,199,.6)}
+button{font-family:'Cinzel',serif;font-weight:700;font-size:1rem;padding:15px 34px;border:2px solid var(--gold);border-radius:44px;background:linear-gradient(135deg,#ff6fb5,#a24bd6);color:#fff;cursor:pointer;box-shadow:0 0 26px rgba(255,143,199,.55);transition:transform .2s;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 44px rgba(255,216,107,.8)}}
+button:active{transform:scale(.95)}
+.glass{background:var(--card);border:1px solid rgba(255,216,107,.35);border-radius:22px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 8px 40px rgba(0,0,0,.35),inset 0 0 30px rgba(255,143,199,.08)}
+.letter{max-width:640px;padding:30px;line-height:2;min-height:230px;text-align:left;font-weight:300}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;width:100%;max-width:780px}
+.flip{perspective:900px;height:210px;cursor:pointer}
+.flip>div{position:relative;width:100%;height:100%;transition:transform .8s;transform-style:preserve-3d}
+.flip.on>div{transform:rotateY(180deg)}
+.f,.b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+.f{background:linear-gradient(135deg,#ff8fc7,#7b3fc4);font-size:3rem;box-shadow:0 0 24px rgba(255,216,107,.35)}
+.f img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.b{background:#2a0e47;transform:rotateY(180deg);font-family:'Great Vibes',cursive;font-size:1.7rem;color:var(--gold)}
+.wish{padding:24px 14px;font-family:'Great Vibes',cursive;font-size:1.7rem;min-height:120px;display:flex;align-items:center;justify-content:center;transition:transform .15s;transform-style:preserve-3d}
+.decree{max-width:560px;width:100%;padding:38px 26px;border:3px double var(--gold);position:relative}
+.decree h3{font-family:'Cinzel',serif;color:var(--gold);letter-spacing:.2em;font-size:1.1rem}
+.decree p{margin:14px 0;line-height:1.8;font-weight:300}
+.decree .nm{font-family:'Great Vibes',cursive;font-size:2.8rem;color:var(--pink)}
+.seal{font-size:2.6rem;margin-top:8px;filter:drop-shadow(0 0 12px #ff4f8b)}
+#castle{position:absolute;bottom:0;left:0;width:100%;height:42vh;z-index:-1}
+#gate{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 40%,#4a1a7a,#0d0418);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+#gate .big{font-size:5rem;animation:fl 2.5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-14px) rotate(4deg)}}
+#music{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:30;padding:9px 14px;font-size:1.1rem;animation:none}
+footer{font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--gold);text-shadow:0 0 20px rgba(255,216,107,.6)}
+</style>
+</head>
+<body class="lock">
+<canvas id="bg"></canvas><canvas id="fx"></canvas>
+<button id="music" aria-label="Music">🔇</button>
+
+<div id="gate">
+  <div class="big">👑</div>
+  <p class="script">Ek surprise tumhara intezaar kar raha hai…</p>
+  <button id="open">Open the Royal Gate</button>
+</div>
+
+<section id="hero">
+  <p class="script">Aaj ka din sirf tumhara hai…</p>
+  <h1>Happy Princess Day</h1>
+  <p class="script" id="nm"></p>
+  <button id="enter">Enter the Kingdom 👑</button>
+  <svg id="castle" viewBox="0 0 800 300" preserveAspectRatio="xMidYMax slice" fill="#0d0418">
+    <path d="M0 300V230h60v-40l15-30 15 30v40h50v-90l20-40 20 40v90h60v-60h40v-80l25-50 25 50v80h40v60h80v-110l30-60 30 60v110h30v-50h50v-70l20-40 20 40v70h40v-90l25-50 25 50v90h60v-40h60v130z"/>
+    <g fill="#ffd86b"><rect x="82" y="215" width="6" height="10"/><rect x="198" y="170" width="6" height="12"/><rect x="342" y="130" width="7" height="12"/><rect x="342" y="190" width="7" height="12"/><rect x="498" y="150" width="7" height="12"/><rect x="498" y="210" width="7" height="12"/><rect x="652" y="170" width="6" height="12"/><rect x="742" y="140" width="6" height="12"/></g>
+  </svg>
+</section>
+
+<section id="msg">
+  <h2>Ek Chhota Sa Letter</h2>
+  <div class="letter glass" id="letter"></div>
+</section>
+
+<section id="gal">
+  <h2>Royal Memories</h2>
+  <div class="grid" id="gallery"></div>
+  <p style="margin-top:18px;opacity:.7;font-size:.85rem">Card par tap karo 💖</p>
+</section>
+
+<section id="wishes">
+  <h2>Royal Wishes</h2>
+  <div class="grid" id="wishgrid"></div>
+</section>
+
+<section id="quiz">
+  <h2>Princess Quiz 🎮</h2>
+  <div class="glass" style="padding:26px 20px;width:100%;max-width:480px" id="quizbox"></div>
+</section>
+
+<section id="decreesec">
+  <h2>Royal Decree</h2>
+  <div class="decree glass">
+    <h3>OFFICIAL ROYAL DECREE</h3>
+    <p>Is shubh din par ye ghoshit kiya jaata hai ki</p>
+    <div class="nm" id="dname"></div>
+    <p>is poore kingdom ki sabse pyari, sabse khoobsurat aur sabse khaas Princess hai. Uski muskaan is rajya ka sabse bada khazana hai.</p>
+    <div class="seal">❤️</div>
+    <p style="font-family:'Great Vibes',cursive;font-size:1.6rem;color:var(--gold)" id="from2"></p>
+  </div>
+</section>
+
+<section id="surprise">
+  <h2>Ek Aakhri Surprise…</h2>
+  <button id="sur">Tap Karo 🎁</button>
+  <p class="script" id="crownmsg" style="margin-top:34px"></p>
+  <footer style="margin-top:50px">Hamesha tumhara ❤️<br><span id="from"></span></footer>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+// ====== EDIT HERE ======
+const CONFIG={
+  name:"Meri Princess",
+  from:"— Tumhara Apna",
+  letter:"Tum meri zindagi ki sabse khoobsurat kahani ho. Tumhari hansi se mera har din roshan ho jaata hai. Aaj Princess Day par bas itna kehna hai ki tum sach me kisi rani se kam nahi ho. Hamesha aise hi muskurati raho. 👑",
+  wishes:["Tum meri Queen ho","Aaj tumhara din hai","Tumhari smile, meri jaan","Tum sabse khaas ho","Always shine bright","Meri duniya tum ho"],
+  // quiz: q = sawal, o = options, a = sahi option ka number (0 se shuru)
+  quiz:[
+    {q:"Is kingdom ki sabse pyari Princess kaun hai?",o:["Cinderella","Elsa","Tum! 😍","Rapunzel"],a:2},
+    {q:"Princess ka sabse bada khazana kya hai?",o:["Heere-moti","Uski muskaan 😊","Sone ka mahal","Jaadui chhadi"],a:1},
+    {q:"Princess se sabse zyada pyaar kaun karta hai?",o:["Pata nahi","Main! ❤️","Koi nahi","Chhupa rajkumar"],a:1},
+    {q:"Aaj kaunsa khaas din hai?",o:["Monday","Holiday","Princess Day 👑","Exam day"],a:2}
+  ],
+  // img: photo ka link ya file ka naam (khaali chhodo to emoji dikhega)
+  photos:[{img:"",emoji:"💖",cap:"Pehli mulaqat"},{img:"",emoji:"🌹",cap:"Woh pyara din"},{img:"",emoji:"✨",cap:"Hamari yaadein"},{img:"",emoji:"🦋",cap:"Tumhari muskaan"}]
+};
+// =======================
+const $=id=>document.getElementById(id);
+$('nm').textContent=CONFIG.name+' ✨';$('dname').textContent=CONFIG.name;
+$('from').textContent=CONFIG.from;$('from2').textContent=CONFIG.from;
+$('gallery').innerHTML=CONFIG.photos.map(p=>`<div class="flip"><div><div class="f">${p.img?`<img src="${p.img}" alt="">`:p.emoji}</div><div class="b">${p.cap}</div></div></div>`).join('');
+$('wishgrid').innerHTML=CONFIG.wishes.map(w=>`<div class="wish glass">${w}</div>`).join('');
+document.querySelectorAll('.flip').forEach(f=>f.onclick=()=>f.classList.toggle('on'));
+document.querySelectorAll('.wish').forEach(w=>{
+  w.addEventListener('pointermove',e=>{const r=w.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;w.style.transform=`rotateY(${x*30}deg) rotateX(${-y*30}deg) scale(1.05)`});
+  w.addEventListener('pointerleave',()=>w.style.transform='');
+});
+
+// ---- Three.js ----
+const renderer=new THREE.WebGLRenderer({canvas:$('bg'),alpha:true,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const scene=new THREE.Scene();
+const cam=new THREE.PerspectiveCamera(55,1,.1,100);cam.position.z=8;
+scene.add(new THREE.AmbientLight(0xffd9ec,.75));
+[[0xffe3a8,1.8,3,5,6],[0xff7ac8,1.2,-5,0,4],[0x9b5cff,1.2,0,-4,4]].forEach(l=>{const p=new THREE.PointLight(l[0],l[1],40);p.position.set(l[2],l[3],l[4]);scene.add(p)});
+
+// ---- CROWN ----
+const crown=new THREE.Group();
+const gold=new THREE.MeshStandardMaterial({color:0xffc933,metalness:.85,roughness:.28,emissive:0x5a3a00,emissiveIntensity:.55,side:THREE.DoubleSide});
+const pearlM=new THREE.MeshStandardMaterial({color:0xfff6ee,metalness:.3,roughness:.15,emissive:0x443344,emissiveIntensity:.4});
+const gemMat=c=>new THREE.MeshStandardMaterial({color:c,emissive:c,emissiveIntensity:.8,metalness:.2,roughness:.1});
+// band (flared ring)
+const prof=[[1.05,-.5],[1.2,-.5],[1.35,.35],[1.2,.5],[1.05,.45],[1.05,-.5]].map(p=>new THREE.Vector2(p[0],p[1]));
+crown.add(new THREE.Mesh(new THREE.LatheGeometry(prof,64),gold));
+[[-.5,1.2],[.5,1.21]].forEach(r=>{const t=new THREE.Mesh(new THREE.TorusGeometry(r[1],.07,12,64),gold);t.rotation.x=Math.PI/2;t.position.y=r[0];crown.add(t)});
+// velvet cap
+const cap=new THREE.Mesh(new THREE.SphereGeometry(1.12,32,16,0,Math.PI*2,0,Math.PI/2),new THREE.MeshStandardMaterial({color:0xc2185b,emissive:0x5a0a30,emissiveIntensity:.6,roughness:.8,side:THREE.DoubleSide}));
+cap.scale.y=.8;cap.position.y=.1;crown.add(cap);
+const gc=[0xff3d9a,0x9b5cff,0x3ec9ff,0xff3d9a,0x9b5cff];
+for(let i=0;i<5;i++){
+  const a=i/5*Math.PI*2,c=Math.cos(a),s=Math.sin(a);
+  // tall spike
+  const sp=new THREE.Mesh(new THREE.ConeGeometry(.24,1.15,16),gold);sp.position.set(c*1.3,1.05,s*1.3);sp.rotation.set(s*.18,0,-c*.18);crown.add(sp);
+  const pe=new THREE.Mesh(new THREE.SphereGeometry(.15,20,20),pearlM);pe.position.set(c*1.42,1.68,s*1.42);crown.add(pe);
+  // short spike
+  const b=a+Math.PI/5,cb=Math.cos(b),sb=Math.sin(b);
+  const sh=new THREE.Mesh(new THREE.ConeGeometry(.17,.65,12),gold);sh.position.set(cb*1.3,.8,sb*1.3);sh.rotation.set(sb*.12,0,-cb*.12);crown.add(sh);
+  const ru=new THREE.Mesh(new THREE.OctahedronGeometry(.09),gemMat(0xff3d6e));ru.position.set(cb*1.36,1.18,sb*1.36);crown.add(ru);
+  // big band jewel
+  const gm=new THREE.Mesh(new THREE.OctahedronGeometry(.19),gemMat(gc[i]));gm.scale.y=1.5;gm.position.set(c*1.31,0,s*1.31);crown.add(gm);
+}
+for(let i=0;i<26;i++){const a=i/26*Math.PI*2,p=new THREE.Mesh(new THREE.SphereGeometry(.06,10,10),pearlM);p.position.set(Math.cos(a)*1.22,-.5,Math.sin(a)*1.22);crown.add(p)}
+// glow
+function radial(){const c=document.createElement('canvas');c.width=c.height=128;const x=c.getContext('2d'),g=x.createRadialGradient(64,64,0,64,64,64);g.addColorStop(0,'rgba(255,216,107,.8)');g.addColorStop(.4,'rgba(255,143,199,.3)');g.addColorStop(1,'rgba(255,143,199,0)');x.fillStyle=g;x.fillRect(0,0,128,128);return new THREE.CanvasTexture(c)}
+const halo=new THREE.Sprite(new THREE.SpriteMaterial({map:radial(),blending:THREE.AdditiveBlending,depthWrite:false}));
+halo.scale.set(7,7,1);halo.position.set(0,.6,-1);crown.add(halo);
+crown.rotation.x=.38;scene.add(crown);
+
+// ---- particles ----
+function tex(t){const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');if(t){x.font='44px serif';x.textAlign='center';x.textBaseline='middle';x.fillText(t,32,36)}else{x.fillStyle='#fff';x.shadowColor='#fff';x.shadowBlur=10;x.beginPath();x.arc(32,32,10,0,7);x.fill()}return new THREE.CanvasTexture(c)}
+function layer(t,n,size,spread){const g=new THREE.BufferGeometry(),p=new Float32Array(n*3);for(let i=0;i<n*3;i+=3){p[i]=(Math.random()-.5)*24;p[i+1]=(Math.random()-.5)*spread;p[i+2]=(Math.random()-.5)*12}
+  g.setAttribute('position',new THREE.BufferAttribute(p,3));const m=new THREE.Points(g,new THREE.PointsMaterial({size,map:tex(t),transparent:true,depthWrite:false}));scene.add(m);return m}
+const stars=layer('',220,.16,22),spark=layer('✨',50,.5,16),falling=[layer('💖',30,.6,16),layer('🌸',40,.6,16)];
+
+function resize(){renderer.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();crown.userData.k=innerWidth<600?.6:.95;fx.width=innerWidth;fx.height=innerHeight}
+let mx=0,my=0,ov=0;const U={v:0};
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;if(Math.random()<.5)trail(e.clientX,e.clientY)});
+const clock=new THREE.Clock();
+function loop(){
+  const t=clock.getElapsedTime(),s=U.v,k=crown.userData.k||1;
+  crown.rotation.y=t*.7;
+  const heroY=1.7+Math.sin(t*1.5)*.15+s*7;
+  crown.position.y=heroY+(1.5-heroY)*ov;
+  crown.scale.setScalar(k*(1+ov*.25));
+  halo.material.opacity=1;
+  stars.material.opacity=.6+Math.sin(t*3)*.3;
+  spark.rotation.y=t*.03;
+  falling.forEach((l,j)=>{const p=l.geometry.attributes.position;for(let i=1;i<p.array.length;i+=3){p.array[i]-=.008+j*.004;if(p.array[i]<-9)p.array[i]=9}p.needsUpdate=true});
+  cam.position.x+=(mx*1.4-cam.position.x)*.05;cam.position.y+=(-my-cam.position.y)*.05;cam.lookAt(0,0,0);
+  renderer.render(scene,cam);drawFx();requestAnimationFrame(loop);
+}
+
+// ---- 2D effects: confetti + cursor trail ----
+const fx=$('fx'),c=fx.getContext('2d');let parts=[];addEventListener('resize',resize);
+function trail(x,y){parts.push({x,y,vx:(Math.random()-.5)*1.5,vy:Math.random()*1.5,s:Math.random()*3+2,c:Math.random()<.5?'#ffd86b':'#ff8fc7',a:1,g:.02,d:.03,t:1,r:0})}
+function burst(){const cols=['#ff8fc7','#ffd86b','#b97aff','#fff'];for(let i=0;i<240;i++)parts.push({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*18,vy:Math.random()*-17-2,s:Math.random()*8+4,c:cols[i%4],a:1,g:.35,d:.006,t:0,r:Math.random()*6})}
+function drawFx(){c.clearRect(0,0,fx.width,fx.height);
+  parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.r+=.2;p.a-=p.d;c.globalAlpha=Math.max(p.a,0);c.fillStyle=p.c;
+    if(p.t){c.beginPath();c.arc(p.x,p.y,p.s,0,7);c.fill()}else{c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillRect(-p.s/2,-p.s/2,p.s,p.s/2);c.restore()}});
+  parts=parts.filter(p=>p.a>0&&p.y<innerHeight+20);c.globalAlpha=1}
+resize();loop();
+
+// ---- flow ----
+let typed=false;
+function type(){if(typed)return;typed=true;const el=$('letter');let i=0;const id=setInterval(()=>{el.textContent=CONFIG.letter.slice(0,++i);if(i>=CONFIG.letter.length)clearInterval(id)},45)}
+const steps=[...document.querySelectorAll('section')];let cur=-1;
+const dots=document.createElement('div');dots.id='dots';dots.style.display='none';dots.innerHTML=steps.map(()=>'<i></i>').join('');document.body.appendChild(dots);
+steps.forEach((s,i)=>{if(i===0||i===steps.length-1)return;const b=document.createElement('button');b.className='next';b.textContent='Aage Badho →';b.onclick=()=>go(i+1);if(s.id==='quiz')b.style.display='none';s.appendChild(b)});
+function go(i){
+  const prev=steps[cur];
+  const show=()=>{steps.forEach(s=>s.style.display='none');const s=steps[i];s.style.display='flex';cur=i;
+    dots.style.display='flex';[...dots.children].forEach((d,j)=>d.className=j===i?'on':'');
+    gsap.fromTo(s.querySelectorAll(':scope>*:not(svg)'),{opacity:0,y:40},{opacity:1,y:0,stagger:.15,duration:.8});
+    gsap.to(U,{v:i?1:0,duration:1.2,ease:'power2.inOut'});
+    if(s.id==='msg')type();if(s.id==='quiz')startQuiz();if(i===steps.length-1)burst()};
+  if(prev)gsap.to(prev,{opacity:0,duration:.35,onComplete:()=>{prev.style.opacity=1;show()}});else show();
+}
+$('open').onclick=()=>{startMusic();gsap.to('#gate',{opacity:0,duration:1.2,onComplete:()=>$('gate').remove()});burst();go(0)};
+$('enter').onclick=()=>go(1);
+
+// ---- quiz ----
+let qi=0,score=0,locked=false;
+function startQuiz(){qi=0;score=0;showQ()}
+function showQ(){
+  const box=$('quizbox'),Q=CONFIG.quiz[qi];let tried=false;locked=false;
+  box.innerHTML=`<div class="qh">Sawal ${qi+1} / ${CONFIG.quiz.length}</div><div class="qq">${Q.q}</div>`+Q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('');
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    if(locked||b.classList.contains('bad'))return;
+    if(+b.dataset.i===Q.a){locked=true;b.classList.add('ok');if(!tried)score++;setTimeout(()=>{qi++;qi<CONFIG.quiz.length?showQ():endQuiz()},900)}
+    else{tried=true;b.classList.add('bad')}
+  });
+}
+function endQuiz(){
+  const n=CONFIG.quiz.length,m=score===n?'Perfect! Tum to sach me meri Princess ho 👑':score>=n/2?'Bahut accha! Princess smart bhi hai 😍':'Koi baat nahi, tum phir bhi meri Princess ho 💖';
+  $('quizbox').innerHTML=`<div class="qq">Score: ${score} / ${n}<br>${'⭐'.repeat(score)}</div><p class="script" style="margin:0">${m}</p>`;
+  burst();document.querySelector('#quiz .next').style.display='';
+}
+$('sur').onclick=()=>{burst();setTimeout(burst,500);setTimeout(burst,1000);
+  $('crownmsg').textContent='👑 Tum hi meri Princess ho! Happy Princess Day! 👑';
+  gsap.to(crownCtl,{v:1,duration:1.2,ease:'elastic.out(1,.5)',onUpdate:()=>ov=crownCtl.v});
+  gsap.to(crownCtl,{v:0,duration:1.5,delay:6,onUpdate:()=>ov=crownCtl.v})};
+const crownCtl={v:0};
+
+// ---- music box lullaby ----
+let ac,on=false,timer,n=0;
+const mel=[523,659,784,1047,784,659,698,880,1047,880,698,587,659,784,659,523];
+function startMusic(){on=true;$('music').textContent='🔊';ac=ac||new (window.AudioContext||window.webkitAudioContext)();ac.resume();
+  timer=setInterval(()=>{const f=mel[n++%mel.length],t=ac.currentTime;
+    [[f,.1],[f*2,.03]].forEach(([fr,v])=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=fr;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0005,t+1.1);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+1.1)});
+    if(n%4===1){const o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=[131,175,196,131][(n>>2)%4];g.gain.setValueAtTime(.1,t);g.gain.exponentialRampToValueAtTime(.0005,t+1.8);o.connect(g).connect(ac.destination);o.start(t);o.stop(t+1.8)}},420)}
+$('music').onclick=function(){if(on){on=false;clearInterval(timer);this.textContent='🔇'}else startMusic()};
+</script>
+</body>
+</html>
